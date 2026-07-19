@@ -1,6 +1,6 @@
 ---
 name: last30days
-version: "3.8.1"
+version: "3.8.2"
 description: "Research what people actually say about any topic in the last 30 days. Pulls posts and engagement from Reddit, X, YouTube, TikTok, Hacker News, Polymarket, GitHub, and the web."
 argument-hint: 'last30days nvidia earnings reaction | last30days AI video tools | last30days what users want in react'
 allowed-tools: Bash, Read, Write, AskUserQuestion, WebSearch
@@ -1191,15 +1191,9 @@ Store your plan as `QUERY_PLAN_JSON` - you'll pass it to the script in the next 
 **IMPORTANT: Include `--x-handle={RESOLVED_HANDLE}` in the command. For comparison mode: Pass `--x-handle={TOPIC_A_HANDLE}` to the first pass, `--x-handle={TOPIC_B_HANDLE}` to the second pass, and both to the head-to-head pass. Also include `--subreddits={RESOLVED_SUBREDDITS}`, `--tiktok-hashtags={RESOLVED_HASHTAGS}`, `--tiktok-creators={RESOLVED_TIKTOK_CREATORS}`, and `--ig-creators={RESOLVED_IG_CREATORS}` from Step 0.55. Omit any flag where the value was not resolved (empty).**
 
 ```bash
-# SKILL_DIR = absolute path of the directory containing THIS SKILL.md you just Read.
-# Substitute the actual path below — your harness told you where this file lives via
-# the Read tool result. Examples:
-#   Read ~/.claude/skills/last30days/SKILL.md      → SKILL_DIR=$HOME/.claude/skills/last30days
-#   Read ~/.codex/skills/last30days/SKILL.md       → SKILL_DIR=$HOME/.codex/skills/last30days
-#   Read ~/.claude/plugins/cache/last30days-skill/last30days/3.8.1/skills/last30days/SKILL.md
-#     → SKILL_DIR=$HOME/.claude/plugins/cache/last30days-skill/last30days/3.8.1/skills/last30days
-# scripts/last30days.py is always a direct child of SKILL_DIR (every install layout
-# packages SKILL.md and scripts/ as siblings).
+# SKILL_DIR = absolute path of the directory containing THIS SKILL.md you just Read —
+# substitute it below, same as in Step 0.5 (see the examples there). scripts/last30days.py
+# is always a direct child of SKILL_DIR.
 SKILL_DIR="<absolute path of the directory containing the SKILL.md you Read>"
 
 if [ ! -f "$SKILL_DIR/scripts/last30days.py" ]; then
